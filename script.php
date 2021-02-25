@@ -1,23 +1,33 @@
 <?php 
-    // $context = array('timeout' => 10,
-    // 'header'=> "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n");
-    // $stockXResponse = file_get_contents('https://stockx.com/api/browse?productCategory=sneakers&currency=EUR&_search=Nike%20Dunk%20Low&dataType=product', $context);
+    $url  = "https://stockx.com/api/browse?productCategory=sneakers&currency=EUR&_search=Nike%20Dunk%20Low&dataType=product";
+    $defaults = array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => TRUE,
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36',
+        CURLOPT_SSL_VERIFYPEER => FALSE
+    );
 
-    // echo $stockXResponse;
-
-    // $url  = 'https://stockx.com/api/browse?productCategory=sneakers&currency=EUR&_search=Nike%20Dunk%20Low&dataType=product';
-
-    // $ch = curl_init();
-    // curl_setopt($ch, CURLOPT_URL, $url);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    // $productList = curl_exec($ch);
-    // curl_close($ch);
-    // $response = json_decode($productList);
-    // var_dump($response);
-?>
+    $ch = curl_init();
+   curl_setopt_array($ch, ($defaults));
 
 
-<!DOCTYPE html>
+
+
+
+     echo $productList = curl_exec($ch);
+    curl_close($ch);
+//     $response = json_decode($productList);
+//     var_dump($response);
+
+//    $w = stream_get_wrappers();
+// echo 'openssl: ',  extension_loaded  ('openssl') ? 'yes':'no', "\n";
+// echo 'http wrapper: ', in_array('http', $w) ? 'yes':'no', "\n";
+// echo 'https wrapper: ', in_array('https', $w) ? 'yes':'no', "\n";
+// echo 'wrappers: ', var_export($w);
+// ?>
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,4 +59,4 @@
 })
 </script>
 
-</html>
+</html> -->
